@@ -1,18 +1,28 @@
 # Django settings for GGFMS project.
+#encoding:utf-8
 
+# Identificando la ruta del proyecto
+import os
+RUTA_PROYECTO = os.path.dirname(os.path.realpath(__file__))
+
+#Está linea se debe dejar en False cuando se pasa a producción
+#DEBUG = False, 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    # ('GGFMS', 'tuiioblog@gmail.com'),
 )
 
 MANAGERS = ADMINS
 
+#En el nombre de la base de datos debe ir la ruta absoluta completa de la base de
+#datos, en el caso de Windows debe ir entre comillas
+#'NAME': '/GGFMS/GGFMS/ggfms.db',
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'localhost',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'ggfms.db',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -29,11 +39,11 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/Lima'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-PE'
 
 SITE_ID = 1
 
